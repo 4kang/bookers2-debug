@@ -32,7 +32,7 @@
            </td>
            <% else %>
            <td>
-             <%= link_to book_favorites_path(@book), method: :post do %>
+             <%= link_to book_favorites_path(@book), method: :book do %>
              ♡<%= @book.favorites.count %>
              <% end %>
            </td>
@@ -40,17 +40,13 @@
             <td>コメント数:<%= @book.book_comments.count %></td>
         </tr>
       </table>
-      <table>
-        <tr>
-          <td>
-               <%= form_with model: [@book, @book_comment] do |f| %>
-               <%= f.text_area :comment %>
-               <%= f.submit "送信" %>
-              <% end %>
-          </td>
-        </tr>
-      </table>
+      <div>
+        <%= form_with model: [@book, @book_comment] do |f| %>
+           <%= f.text_area :comment, size: "60x5" %></br>
+            <%= f.submit "送信" %>
+          <% end %>
+      </div>
+
     </div>
   </div>
-</div/div>
-</div
+</div>
