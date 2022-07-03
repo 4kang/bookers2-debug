@@ -1,10 +1,11 @@
+<h2>Follow User</h2>
 <!--exists?メソッドとは、指定した条件のレコードがデータベースに存在するかどうかを真偽値で返すメソッドです。-->
-<% if users.exists? %>
- <% users.each do |user| %>
+<% if @users.exists? %>
+ <% @users.each do |user| %>
   <table>
     <thead>
       <tr>
-        <th>Follow User</th>
+        <th></th>
         <th colspan="2"></th>
         <th colspan="3"></th>
       </tr>
@@ -12,7 +13,6 @@
     <tbody>
       <tr>
         <td><%= user.name %></td>
-        <td>フォロー数:<%= user.followings.count %></td>
         <td>フォロワー数:<%= user.followers.count %></td>
       </tr>
     </tbody>
@@ -20,4 +20,4 @@
  <% end %>
 <% else %>
  <p>ユーザーはいません</p>
-<% end
+<% end %>
