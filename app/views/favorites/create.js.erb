@@ -1,2 +1,2 @@
 <!--$("セレクタ").メソッド("パラメータ[引数]");-->
-$("#favorites_btn").html("<%= j(render "favorites/btn", book: @book) %>");
+$('.favorites_buttons_<%= @book.id %>').html("<%= j(render "favorites/btn", book: @book) %>");
